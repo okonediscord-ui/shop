@@ -655,36 +655,39 @@
 <div class="toast" id="toast"></div>
 
 <script>
+const BASE = "https://okonediscord-ui.github.io/shop/img/";
 const TELEGRAM = "lilpharmacyofficialreal"; // ← ton @username ici
 
-const BASE = "https://github.com/okonediscord-ui/shop/tree/main/img";
+const products = [
+  const BASE = "https://okonediscord-ui.github.io/shop/img/";
 
 const products = [
-  { id:1,  name:"Green Yeckhardt 100ml",  cat:"lean",  price:50,  img:BASE+"YECK473.jpg",    badge:"hot",  desc:"Replica Wockhardt 10mg/5ml | Prométazine" },
-  { id:2,  name:"Yeckhardt 100ml",        cat:"lean",  price:70,  img:BASE+"YECK100.png",    badge:"hot",  desc:"Replica Wockhardt 15mg/5ml | 10mg/5ml Codéine | Prométazine" },
-  { id:3,  name:"Ritaline 20mg",          cat:"plug",  price:90,  img:BASE+"ritaline10.jpg", badge:null,   desc:"Méthylphénidate 20mg 30cp" },
-  { id:4,  name:"Oxycodone 30mg",         cat:"plug",  price:160, img:BASE+"oxy30.jpg",      badge:null,   desc:"30mg d'Oxycodone à libération prolongée. 28cp" },
-  { id:5,  name:"Trankimazin",            cat:"drip",  price:130, img:BASE+"tranki.jpg",     badge:"new",  desc:"Alprazolam 2mg 50cp" },
-  { id:6,  name:"Codeintropfen 30ml",     cat:"lean",  price:50,  img:BASE+"siro.png",       badge:null,   desc:"Concentration inconnue" },
-  { id:7,  name:"Paderyl 150ml",          cat:"lean",  price:45,  img:BASE+"pade.jpg",       badge:null,   desc:"Sirop de codéine 150ml" },
-  { id:8,  name:"Oxycodone 20mg",         cat:"plug",  price:100, img:BASE+"OXY20.jpg",      badge:null,   desc:"20mg d'Oxycodone à libération prolongée. 14cp" },
-  { id:9,  name:"Oxycodone 40mg",         cat:"plug",  price:220, img:BASE+"oxy40.jpg",      badge:"hot",  desc:"40mg d'Oxycodone à libération prolongée. 28cp" },
-  { id:10, name:"Euphon old 300ml",       cat:"lean",  price:100, img:"",                    badge:"hot",  desc:"Sirop de codéine de 300ml 1mg/ml" },
-  { id:11, name:"Tryasol",               cat:"lean",  price:80,  img:BASE+"tryasol.jpg",    badge:"hot",  desc:"Sirop de promethazine" },
-  { id:12, name:"Neurax 100mg",           cat:"plug",  price:150, img:"",                    badge:"hot",  desc:"Prométhazine 100cp" },
-  { id:13, name:"Bromazepam 6mg",         cat:"drip",  price:30,  img:BASE+"broma.jpg",      badge:"hot",  desc:"Bromazepam 30cp" },
-  { id:14, name:"Toseina 250ml",          cat:"lean",  price:90,  img:BASE+"tos.png",        badge:"hot",  desc:"Sirop de codéine de 250ml 2mg/ml" },
-  { id:15, name:"Green Yeckhardt Pint",   cat:"lean",  price:400, img:BASE+"pintgreen.jpg",  badge:"hot",  desc:"473ml" },
-  { id:16, name:"Yeckhardt Pint",         cat:"lean",  price:400, img:BASE+"pintyelo.jpg",   badge:"hot",  desc:"473ml" },
-  { id:17, name:"Replique US Pinte Vide", cat:"acces", price:35,  img:BASE+"flac.jpg",       badge:"hot",  desc:"473ml" },
-  { id:18, name:"Pochetard",              cat:"acces", price:5,   img:BASE+"poch.png",       badge:"hot",  desc:"Pochetard pour fume" },
-  { id:19, name:"Bol",                    cat:"acces", price:5,   img:BASE+"bol.jpg",        badge:"hot",  desc:"Bol pour mélanger le hash" },
-  { id:20, name:"Pochetard",              cat:"acces", price:5,   img:BASE+"poch2.jpg",      badge:"hot",  desc:"Pochetard pour fume" },
-  { id:21, name:"Pochetard",              cat:"acces", price:5,   img:BASE+"poch3.jpg",      badge:"hot",  desc:"Pochetard pour fume" },
-  { id:22, name:"Filtre en verre",        cat:"acces", price:5,   img:BASE+"filtre.jpg",     badge:"hot",  desc:"Filtre en verre" },
-  { id:23, name:"Contenant hermétique Cookies", cat:"acces", price:5,  img:BASE+"cont.jpg",  badge:"hot",  desc:"Contenant hermétique" },
-  { id:24, name:"Contenant hermétique en verre", cat:"acces", price:10, img:BASE+"contvert.jpg", badge:"hot", desc:"Contenant hermétique en verre avec lampe" },
-  { id:25, name:"Valium 10mg",            cat:"drip",  price:40,  img:BASE+"val.jpg",        badge:"new",  desc:"Valium roche" },
+  { id:1,  name:"Green Yeckhardt 100ml",          cat:"lean",  price:50,  img:BASE+"YECK473.jpg",    badge:"hot",  desc:"Replica Wockhardt 10mg/5ml | Prométazine" },
+  { id:2,  name:"Yeckhardt 100ml",                cat:"lean",  price:70,  img:BASE+"YECK100.png",    badge:"hot",  desc:"Replica Wockhardt 15mg/5ml | 10mg/5ml Codéine | Prométazine" },
+  { id:3,  name:"Ritaline 20mg",                  cat:"plug",  price:90,  img:BASE+"ritaline10.jpg", badge:null,   desc:"Méthylphénidate 20mg 30cp" },
+  { id:4,  name:"Oxycodone 30mg",                 cat:"plug",  price:160, img:BASE+"oxy30.jpg",      badge:null,   desc:"30mg d'Oxycodone à libération prolongée. 28cp" },
+  { id:5,  name:"Trankimazin",                    cat:"drip",  price:130, img:BASE+"tranki.jpg",     badge:"new",  desc:"Alprazolam 2mg 50cp" },
+  { id:6,  name:"Codeintropfen 30ml",             cat:"lean",  price:50,  img:BASE+"siro.png",       badge:null,   desc:"Concentration inconnue" },
+  { id:7,  name:"Paderyl 150ml",                  cat:"lean",  price:45,  img:BASE+"pade.jpg",       badge:null,   desc:"Sirop de codéine 150ml" },
+  { id:8,  name:"Oxycodone 20mg",                 cat:"plug",  price:100, img:BASE+"OXY20.jpg",      badge:null,   desc:"20mg d'Oxycodone à libération prolongée. 14cp" },
+  { id:9,  name:"Oxycodone 40mg",                 cat:"plug",  price:220, img:BASE+"oxy40.jpg",      badge:"hot",  desc:"40mg d'Oxycodone à libération prolongée. 28cp" },
+  { id:10, name:"Euphon old 300ml",               cat:"lean",  price:100, img:"",                    badge:"hot",  desc:"Sirop de codéine de 300ml 1mg/ml" },
+  { id:11, name:"Tryasol",                        cat:"lean",  price:80,  img:BASE+"tryasol.jpg",    badge:"hot",  desc:"Sirop de promethazine" },
+  { id:12, name:"Neurax 100mg",                   cat:"plug",  price:150, img:"",                    badge:"hot",  desc:"Prométhazine 100cp" },
+  { id:13, name:"Bromazepam 6mg",                 cat:"drip",  price:30,  img:BASE+"broma.jpg",      badge:"hot",  desc:"Bromazepam 30cp" },
+  { id:14, name:"Toseina 250ml",                  cat:"lean",  price:90,  img:BASE+"tos.png",        badge:"hot",  desc:"Sirop de codéine de 250ml 2mg/ml" },
+  { id:15, name:"Green Yeckhardt Pint",           cat:"lean",  price:400, img:BASE+"pintgreen.jpg",  badge:"hot",  desc:"473ml" },
+  { id:16, name:"Yeckhardt Pint",                 cat:"lean",  price:400, img:BASE+"pintyelo.jpg",   badge:"hot",  desc:"473ml" },
+  { id:17, name:"Replique US Pinte Vide",         cat:"acces", price:35,  img:BASE+"flac.jpg",       badge:"hot",  desc:"473ml" },
+  { id:18, name:"Pochetard",                      cat:"acces", price:5,   img:BASE+"poch.png",       badge:"hot",  desc:"Pochetard pour fume" },
+  { id:19, name:"Bol",                            cat:"acces", price:5,   img:BASE+"bol.jpg",        badge:"hot",  desc:"Bol pour mélanger le hash" },
+  { id:20, name:"Pochetard",                      cat:"acces", price:5,   img:BASE+"poch2.jpg",      badge:"hot",  desc:"Pochetard pour fume" },
+  { id:21, name:"Pochetard",                      cat:"acces", price:5,   img:BASE+"poch3.jpg",      badge:"hot",  desc:"Pochetard pour fume" },
+  { id:22, name:"Filtre en verre",                cat:"acces", price:5,   img:BASE+"filtre.jpg",     badge:"hot",  desc:"Filtre en verre" },
+  { id:23, name:"Contenant hermétique Cookies",   cat:"acces", price:5,   img:BASE+"cont.jpg",       badge:"hot",  desc:"Contenant hermétique" },
+  { id:24, name:"Contenant hermétique en verre",  cat:"acces", price:10,  img:BASE+"contvert.jpg",   badge:"hot",  desc:"Contenant hermétique en verre avec lampe" },
+  { id:25, name:"Valium 10mg",                    cat:"drip",  price:40,  img:BASE+"val.jpg",        badge:"new",  desc:"Valium roche" },
+];
 ];
 
 let cart = [];
